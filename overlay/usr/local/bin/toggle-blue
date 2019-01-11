@@ -1,0 +1,9 @@
+#!/bin/bash
+#/usr/local/bin/toggle-blue
+
+if [ ${RFKILL_STATE} = 0 ]; then
+	systemctl stop bt_uart
+else
+	systemctl stop bt_uart
+	systemctl start bt_uart
+fi

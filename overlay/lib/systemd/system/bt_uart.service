@@ -1,0 +1,13 @@
+#start
+[Unit]
+Description=BCM bluetooth HCI
+Before=bluetooth.service
+After=dev-ttyS0.device
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/brcm_patchram_plus -d --enable_hci --no2bytes --tosleep 200000 --baudrate 3000000 --patchram /etc/firmware/BCM4345C0.hcd /dev/ttyS0 &
+
+[Install]
+WantedBy=multi-user.target
+#end
