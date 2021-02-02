@@ -10,8 +10,9 @@ To run docker(user is your local user):
 
 Once into docker launch:
 '''
+	cd rk-rootfs-build
 	sudo dpkg -i ubuntu-build-service/packages/*
-	sudo apt-get install -f
+	sudo apt-get install -f -y
 	RELEASE=buster TARGET=desktop ARCH=armhf ./mk-base-debian.sh
 	RELEASE=buster ARCH=armhf ./mk-rootfs.sh
 	./mk-image.sh
